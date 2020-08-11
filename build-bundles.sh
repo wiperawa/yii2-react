@@ -1,5 +1,5 @@
 #This script will build latest REACT production and development bundles
-#Meant to be run from composer post-install-cm and post-update-cmd
+#Meant to be run from composer post-install-cmd and post-update-cmd
 #!/bin/bash
 OLD_PWD=$PWD
 SCRIPT=`realpath $0`

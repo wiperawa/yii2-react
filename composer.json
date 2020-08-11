@@ -2,7 +2,7 @@
   "name": "b-tokman/yii2-react",
   "description": "Yii 2 widget for server-side rendering ReactJs",
   "license": "MIT",
-  "type": "yii2-extension",
+  "type": "composer-plugin",
   "keywords": [
     "react",
     "reactjs",
@@ -13,13 +13,16 @@
     "source": "https://github.com/bTokman/yii2-react"
   },
   "require": {
-    "php": ">=5.4.0",
+    "php": ">=7.2.0",
+    "composer-plugin-api": "^1.0|^2.0",
+    "composer/composer": "~1.0|~2.0@dev",
     "yiisoft/yii2": "~2",
     "reactjs/react-php-v8js": "^2.0",
     "talyssonoc/php-babel-transpiler":"master",
     "koala-framework/composer-extra-assets": "~1.1"
   },
   "extra": {
+    "class": "bTokman\\react\\BundlesBuilder",
     "require-npm": {
       "react": "*",
       "react-dom":"*",
@@ -29,13 +32,7 @@
       "uglifyify": "*"
     }
   },
-  "scripts": {
-    "regenerate_react_bundle": [
-      "./build-bundles.sh"
-    ],
-    "post-install-cmd": "@regenerate_react_bundle",
-    "post-update-cmd": "@regenerate_react_bundle"
-  },
+
   "authors": [
     {
       "name": "Bohdan Tokman",
