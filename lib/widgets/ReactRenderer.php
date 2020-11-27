@@ -86,17 +86,21 @@ class ReactRenderer extends Widget
         if (!$this->js and (empty($this->componentsSourceJs) || !file_exists($this->componentsSourceJs )) ) {
             throw new NotFoundHttpException('React component source js file doesn\'t exist, and raw js is empty');
         }
-        /**
-         * Get ReactJs server side render instance
-         */
-        $this->_react = new ReactJS($this->getReactSource(), $this->getSourceJs());
 
-        /**
-         * Need to set error handler for reactJS, because if there is no handler, it somewhy,
-         * dont throw exception, but echoes error and die.
-         */
-        $this->_react->setErrorHandler( function( V8JsException $e){ throw $e; } );
+        if ($this->options['prerender'] === true) {
+            /**
+             * Get ReactJs server side render instance
+             */
+            $this->_react = new ReactJS($this->getReactSource(), $this->getSourceJs());
 
+            /**
+             * Need to set error handler for reactJS, because if there is no handler, it somewhy,
+             * dont throw exception, but echoes error and die.
+             */
+            $this->_react->setErrorHandler(function (V8JsException $e) {
+                throw $e;
+            });
+        }
         parent::init();
     }
 
