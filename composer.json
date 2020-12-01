@@ -18,7 +18,7 @@
     "composer/composer": "~1.0|~2.0@dev",
     "yiisoft/yii2": "~2",
     "reactjs/react-php-v8js": "^2.0",
-    "talyssonoc/php-babel-transpiler":"master",
+    "talyssonoc/php-babel-transpiler":"master"
   },
   "extra": {
     "class": "bTokman\\react\\BundlesBuilder",
