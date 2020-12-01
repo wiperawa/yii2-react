@@ -19,7 +19,6 @@
     "yiisoft/yii2": "~2",
     "reactjs/react-php-v8js": "^2.0",
     "talyssonoc/php-babel-transpiler":"master",
-    "koala-framework/composer-extra-assets": "*"
   },
   "extra": {
     "class": "bTokman\\react\\BundlesBuilder",
